@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery | CodeAlpha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>📸 Image Gallery</h1>
+            <p>Explore beautiful moments through our gallery</p>
+        </div>
+    </header>
+    <!-- Filter Buttons -->
+    <section class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="Butterfly">Butterfly</button>
+        <button class="filter-btn" data-filter="cloud">cloud</button>
+    </section>
+    <main class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item" data-category="Butterfly">
+                <img src="images/img1.avif" alt="Beautiful nature">
+                <div class="overlay">
+                    <h3>Beautiful Nature</h3>
+                    <p>Butterfly</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cloud">
+                <img src="images/img2.avif" alt="Cloud view">
+                <div class="overlay">
+                    <h3>Cloud View</h3>
+                    <p>Cloud</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="flower">
+                <img src="images/img3.avif" alt="Beautiful flower">
+                <div class="overlay">
+                    <h3>Wildlife</h3>
+                    <p>flower</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="Bird">
+                <img src="images/img4.avif" alt="Mountain landscape">
+                <div class="overlay">
+                    <h3>Mountain View</h3>
+                    <p>Bird</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="window">
+                <img src="images/img5.avif" alt="Beautiful city">
+                <div class="overlay">
+                    <h3>Beautiful City</h3>
+                    <p>Window</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="images/img6.avif" alt="Cute nature">
+                <div class="overlay">
+                    <h3>Nature</h3>
+                    <p>Nature</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <button class="prev-btn" id="prevBtn">&#10094;</button>
+        <img id="lightboxImage" src="" alt="Full size image">
+        <button class="next-btn" id="nextBtn">&#10095;</button>
+        <div class="image-counter" id="imageCounter">1 / 6</div>
+    </div>
+    <footer class="footer">
+        <p> © 2026 CodeAlpha Image Gallery</p>
+        <p>Created for CodeAlpha Frontend Development Internship</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Lightbox kya hota hai?
+Jab tum gallery mein kisi image par click karti ho, to image badi screen/popup 
+mein open hoti hai. Us popup ko Lightbox kehte hain. -->
+<!-- &times; → × symbol banata hai
+Screen par:× Jab user is par click karega to lightbox close hoga. -->
+<!-- next image par jane ka button hai. &#10095; iska output:❯
+Image 2
+   ↓
+click ❯
+   ↓
+Image 3 -->
+<!-- Image Counter Ye batata hai ke user kaunsi image dekh raha hai. Abhi image
+ 1 hai aur total 6 images hain.-->
+<!-- JavaScript
+ ↓
+Close → Lightbox band
+Previous → previous image
+Next → next image
+Counter → 2 / 6, 3 / 6...
+Image → actual image change -->

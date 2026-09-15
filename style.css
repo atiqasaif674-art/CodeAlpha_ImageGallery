@@ -1,0 +1,236 @@
+   /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+   /* Header */
+.header {
+    padding: 70px 20px;
+    text-align: center;
+    background: linear-gradient(135deg,#111827,#374151);
+    color: white;
+}
+.header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+.header p {
+    font-size: 18px;
+    color: #d1d5db;
+}
+   /* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+}
+.filter-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background: white;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.filter-btn:hover {
+    transform: translateY(-3px);
+}
+.filter-btn.active {
+    background: #111827;
+    color: white;
+}
+   /* Gallery */
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 25px;
+}
+   /* Gallery Item */
+.gallery-item {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    background: #ddd;
+    box-shadow:0 8px 25px rgba(0, 0, 0, 0.12);
+    transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+   /* Gallery Image */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition:transform 0.5s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+   /* Overlay */
+.overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    color: white;
+    background:linear-gradient(transparent,rgba(0, 0, 0, 0.8));
+    transform:translateY(100%);
+    transition:transform 0.4s ease;
+}
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+.overlay h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.overlay p {
+    font-size: 14px;
+    color: #ddd;
+}
+   /* Hidden Filter Items */
+.gallery-item.hidden {
+    display: none;
+}
+   /* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background:rgba(0, 0, 0, 0.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 40px;
+}
+.lightbox.show {
+    display: flex;
+}
+/* Lightbox Image */
+#lightboxImage {
+    max-width: 85%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+}
+   /* Lightbox Buttons */
+.close-btn,.prev-btn,.next-btn {
+    position: absolute;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    transition:background 0.3s ease,transform 0.3s ease;
+}
+.close-btn:hover,.prev-btn:hover,.next-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+/* Close */
+.close-btn {
+    top: 25px;
+    right: 30px;
+}
+/* Previous */
+.prev-btn {
+    left: 30px;
+}
+/* Next */
+.next-btn {
+    right: 30px;
+}
+/* Counter */
+.image-counter {
+    position: absolute;
+    bottom: 25px;
+    color: white;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+.footer {
+    margin-top: 60px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #111827;
+    color: white;
+}
+.footer p {
+    margin: 6px 0;
+    color: #d1d5db;
+    font-size: 14px;
+}
+   /* Responsive Design */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+    .header h1 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        padding: 50px 20px;
+    }
+    .header h1 {
+        font-size: 32px;
+    }
+    .header p {
+        font-size: 16px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item {
+        height: 250px;
+    }
+    #lightboxImage {
+        max-width: 90%;
+    }
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
+    .close-btn {
+        right: 15px;
+    }
+}
